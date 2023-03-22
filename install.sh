@@ -20,7 +20,7 @@ InstallAnsible()
 RunAnsiblePlaybooks()
 {
         echo "Running playbooks"
-        ansible-playbook /tmp/overlay/ansible/playbooks/*
+        ansible-playbook ansible/playbooks/*
 }
 
 Main "$@"
