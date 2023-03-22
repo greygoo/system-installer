@@ -8,27 +8,42 @@
    - name: Print message
      ansible.builtin.debug:
        msg: Copying rns user config
-   - name: Copy reticulum config 
+   - name: Create ~/.reticulum directory if it does not exist
+     ansible.builtin.file:
+       path: /home/{{ default_user }}/.reticulum
+       state: directory
+       mode: '0755'
+   - name: Copy reticulum config
      ansible.builtin.copy:
-       src: config_user/orangepi3-lts/default/rns/reticulum.config
+       src: ../config_user/orangepi3-lts/default/rns/reticulum.config
        dest: /home/{{ default_user }}/.reticulum/config
        owner: "{{ default_user }}"
-       group: users 
+       group: users
        mode: '0644'
        backup: yes
-   - name: Copy NomadNet config 
+   - name: Create ~/.nomadnetwork directory if it does not exist
+     ansible.builtin.file:
+       path: /home/{{ default_user }}/.nomadnetwork
+       state: directory
+       mode: '0755'
+   - name: Copy NomadNet config
      ansible.builtin.copy:
-       src: config_user/orangepi3-lts/default/rns/nomadnet.config 
+       src: ../config_user/orangepi3-lts/default/rns/nomadnet.config
        dest: /home/{{ default_user }}/.nomadnetwork/config
        owner: "{{ default_user }}"
-       group: users 
+       group: users
        mode: '0644'
        backup: yes
-   - name: Copy Node index page 
+   - name: Create ~/.nomadnetwork/storage/pages directory if it does not exist
+     ansible.builtin.file:
+       path: /home/{{ default_user }}/.nomadnetwork/storage/pages
+       state: directory
+       mode: '0755'
+   - name: Copy Node index page
      ansible.builtin.copy:
-       src: config_user/orangepi3-lts/default/rns/index.mu 
+       src: ../config_user/orangepi3-lts/default/rns/index.mu
        dest: /home/{{ default_user }}/.nomadnetwork/storage/pages/index.mu
        owner: "{{ default_user }}"
-       group: users 
+       group: users
        mode: '0644'
        backup: yes
