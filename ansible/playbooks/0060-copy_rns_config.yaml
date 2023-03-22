@@ -15,7 +15,7 @@
        mode: '0755'
    - name: Copy reticulum config
      ansible.builtin.copy:
-       src: ../config_user/orangepi3-lts/default/rns/reticulum.config
+       src: ../config/user/orangepi3-lts/default/rns/reticulum.config
        dest: /home/{{ default_user }}/.reticulum/config
        owner: "{{ default_user }}"
        group: users
@@ -28,7 +28,7 @@
        mode: '0755'
    - name: Copy NomadNet config
      ansible.builtin.copy:
-       src: ../config_user/orangepi3-lts/default/rns/nomadnet.config
+       src: ../config/user/orangepi3-lts/default/rns/nomadnet.config
        dest: /home/{{ default_user }}/.nomadnetwork/config
        owner: "{{ default_user }}"
        group: users
@@ -41,7 +41,7 @@
        mode: '0755'
    - name: Copy Node index page
      ansible.builtin.copy:
-       src: ../config_user/orangepi3-lts/default/rns/index.mu
+       src: ../config/user/orangepi3-lts/default/rns/index.mu
        dest: /home/{{ default_user }}/.nomadnetwork/storage/pages/index.mu
        owner: "{{ default_user }}"
        group: users
