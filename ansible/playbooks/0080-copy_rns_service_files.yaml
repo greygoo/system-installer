@@ -7,7 +7,7 @@
      ansible.builtin.ping:
    - name: Print message
      ansible.builtin.debug:
-       msg: Copying rns user config
+       msg: Copying rns systemd service files
    - name: Copy rns systemd service file 
      ansible.builtin.copy:
        src: ../config/system/orangepi3-lts/default/rns/rnsd.service 
