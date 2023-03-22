@@ -8,6 +8,7 @@ BUILD_DESKTOP=$4
 Main() {
         InstallAnsible
         RunAnsiblePlaybooks
+	UninstallAnsible
 }
 
 InstallAnsible()
@@ -16,6 +17,13 @@ InstallAnsible()
         yes | DEBIAN_FRONTEND=noninteractive apt-get -yqq install ansible
         apt clean
 } # InstallAdvancedDesktop
+
+UninstallAnsible()
+{
+        echo "Uninstalling ansible"
+        yes | DEBIAN_FRONTEND=noninteractive apt-get -yqq remove ansible
+        apt clean
+} # UninstallAnsible
 
 RunAnsiblePlaybooks()
 {
