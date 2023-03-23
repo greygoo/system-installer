@@ -4,4 +4,4 @@ PLAYBOOKS="0000-create_default_user.yaml \
 	   0120-download_system_tools.yaml \
 	   0020-install_packages.yaml \
 	   0060-copy_rns_config.yaml \
-	   0100-enable_rns_service.yml
+	   0100-enable_rns_service.yml"
