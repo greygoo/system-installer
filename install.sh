@@ -5,7 +5,7 @@ BOARD=${2:-"orangepi3-lts"}
 BRANDING=${3:-"default"}
 
 if [ ! -f profiles/${PROFILE} ]; then
-	echo "Profile not found. Exiting"
+	echo "Profile ${PROFILE} not found. Exiting"
 	exit 1
 fi
 
