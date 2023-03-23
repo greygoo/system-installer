@@ -15,6 +15,7 @@ echo "Running Installer"
 echo "Profile: ${PROFILE}"
 echo "Board: ${BOARD}"
 echo "Branding: ${BRANDING}"
+echo "Selected Playbooks: ${PLAYBOOKS}"
 
 Main() {
         InstallAnsible
@@ -43,7 +44,7 @@ RunAnsiblePlaybooks()
         	ansible-playbook --extra-vars "branding=${BRANDING}" \
 				 --extra-vars "board=${BOARD}" \
 				 --extra-vars "@config.yaml" \
-			 	 ansible/playbooks/${PLAYBOOK}
+			 	 ansible/playbooks/${playbook}
 	done
 }
 
