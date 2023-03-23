@@ -1,10 +1,20 @@
 #!/bin/sh
 
-RELEASE=$1
-LINUXFAMILY=$2
-BOARD=$3
-BUILD_DESKTOP=$4
-BRANDING= $5
+PROFILE=${1:-"local_install"}
+BOARD=${2:-"orangepi3-lts"}
+BRANDING=${3:-"default"}
+
+if [ ! -f profiles/${PROFILE} ]; then
+	echo "Profile not found. Exiting"
+	exit 1
+fi
+
+. profiles/${PROFILE}
+
+echo "Running Installer"
+echo "Profile: ${PROFILE}"
+echo "Board: ${BOARD}"
+echo "Branding: ${BRANDIN}}"
 
 Main() {
         InstallAnsible
@@ -32,7 +42,7 @@ RunAnsiblePlaybooks()
         ansible-playbook --extra-vars "branding=${BRANDING}" \
 			 --extra-vars "board=${BOARD}" \
 			 --extra-vars "@config.yaml" \
-			 ansible/playbooks/*
+			 ansible/playbooks/${PLAYBOOKS}
 }
 
 Main "$@"
