@@ -1,7 +1,5 @@
 - name: Create default user 
   hosts: localhost
-  vars:
-    default_user: nomad
   tasks:
    - name: Ping my hosts
      ansible.builtin.ping:
