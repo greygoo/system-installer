@@ -4,6 +4,7 @@ RELEASE=$1
 LINUXFAMILY=$2
 BOARD=$3
 BUILD_DESKTOP=$4
+BRANDING= $5
 
 Main() {
         InstallAnsible
@@ -28,7 +29,9 @@ UninstallAnsible()
 RunAnsiblePlaybooks()
 {
         echo "Running playbooks"
-        ansible-playbook ansible/playbooks/*
+        ansible-playbook --extra-vars "branding=${BRANDING}" \
+			 --extra-vars "board=${BOARD}" \
+			 ansible/playbooks/*
 }
 
 Main "$@"
