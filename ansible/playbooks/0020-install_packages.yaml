@@ -11,11 +11,6 @@
        pkg:
          "{{ packages_console }}"
        update_cache: yes
-   - name: Install Desktop Packages
-     ansible.builtin.apt:
-       pkg:
-         "{{ packages_desktop }}"
-       update_cache: yes
    - name: Install Server Packages
      ansible.builtin.apt:
        pkg:
