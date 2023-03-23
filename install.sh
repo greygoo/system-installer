@@ -31,6 +31,7 @@ RunAnsiblePlaybooks()
         echo "Running playbooks"
         ansible-playbook --extra-vars "branding=${BRANDING}" \
 			 --extra-vars "board=${BOARD}" \
+			 --extra-vars "@config.yaml" \
 			 ansible/playbooks/*
 }
 
