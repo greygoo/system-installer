@@ -14,7 +14,7 @@ fi
 echo "Running Installer"
 echo "Profile: ${PROFILE}"
 echo "Board: ${BOARD}"
-echo "Branding: ${BRANDIN}}"
+echo "Branding: ${BRANDING}"
 
 Main() {
         InstallAnsible
