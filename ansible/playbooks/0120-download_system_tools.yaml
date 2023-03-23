@@ -6,8 +6,13 @@
    - name: Print message
      ansible.builtin.debug:
        msg: Download system tools 
-   - name: Download lora_config.sh
+   - name: Download set_lora_device.sh
      ansible.builtin.get_url:
        url: https://raw.githubusercontent.com/greygoo/system-tools/main/set_lora_device/set_lora_device.sh
        dest: /usr/local/bin/set_lora_device.sh
+       mode: '0755'
+   - name: Download lora_config.sh
+     ansible.builtin.get_url:
+       url: https://raw.githubusercontent.com/greygoo/system-tools/main/lora_config/lora_config.sh
+       dest: /usr/local/bin/lora_config.sh
        mode: '0755'
