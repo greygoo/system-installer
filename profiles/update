@@ -1,8 +1,3 @@
-PLAYBOOKS="0000-create_default_user.yaml \
+PLAYBOOKS="0020-install_packages.yaml \
 	   0040-install_python_modules.yaml \
-	   0080-copy_rns_service_files.yaml \
-	   0120-download_system_tools.yaml \
-	   0020-install_packages.yaml \
-	   0060-copy_rns_config.yaml \
-	   0100-enable_rns_service.yml \
-	   0140-install_desktop.yaml"
+	   0120-download_system_tools.yaml" 
