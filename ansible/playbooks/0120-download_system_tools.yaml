@@ -16,3 +16,8 @@
        url: https://raw.githubusercontent.com/greygoo/system-tools/main/lora_config/lora_config.sh
        dest: /usr/local/bin/lora_config.sh
        mode: '0755'
+   - name: Download factory_reset.sh
+     ansible.builtin.get_url:
+       url: https://raw.githubusercontent.com/greygoo/system-tools/main/factory_reset/factory_restore.sh 
+       dest: /usr/local/bin/factory_reset.sh
+       mode: '0755'
