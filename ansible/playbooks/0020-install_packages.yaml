@@ -1,29 +1,34 @@
 - name: Install additional packages
   hosts: localhost
   tasks:
-   - name: Ping my hosts
-     ansible.builtin.ping:
-   - name: Print message
-     ansible.builtin.debug:
-       msg: Installing Packages
-   - name: Install Console Packages
-     ansible.builtin.apt:
-       pkg:
-         "{{ packages_console }}"
-       update_cache: yes
-   - name: Install Server Packages
-     ansible.builtin.apt:
-       pkg:
-         "{{ packages_services }}"
-       update_cache: yes
-   - name: Install RNS required Packages
-     ansible.builtin.apt:
-       pkg:
-         "{{ packages_rns }}"
-       update_cache: yes
-   - name: Remove useless packages from the cache
-     ansible.builtin.apt:
-       autoclean: yes
-   - name: Remove dependencies that are no longer required
-     ansible.builtin.apt:
-       autoremove: yes
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Installing Packages
+  - name: Add Armbian repo 
+    ansible.builtin.apt_repository:
+      repo: deb http://apt.armbian.com jammy main jammy-utils jammy-desktop
+      state: present
+      filename: armbian
+  - name: Install Console Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_console }}"
+      update_cache: yes
+  - name: Install Server Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_services }}"
+      update_cache: yes
+  - name: Install RNS required Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_rns }}"
+      update_cache: yes
+  - name: Remove useless packages from the cache
+    ansible.builtin.apt:
+      autoclean: yes
+  - name: Remove dependencies that are no longer required
+    ansible.builtin.apt:
+      autoremove: yes
