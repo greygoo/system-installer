@@ -30,6 +30,11 @@
       pkg:
         "{{ packages_rns }}"
       update_cache: yes
+  - name: Install SDR Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_sdr }}"
+      update_cache: yes
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
       autoclean: yes
