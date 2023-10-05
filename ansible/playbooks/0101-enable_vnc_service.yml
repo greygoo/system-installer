@@ -8,6 +8,6 @@
        msg: Enabling vnc service
    - name: Enable vnc service
      ansible.builtin.systemd:
-       name: x11vnc@ 
+       name: x11vnc@:0
        enabled: true
        masked: no
