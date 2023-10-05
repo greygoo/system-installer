@@ -1,0 +1,16 @@
+- name: Copy vnc service file 
+  hosts: localhost
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Copying vnc systemd service file
+   - name: Copy vnc systemd service file 
+     ansible.builtin.copy:
+       src: ../config/system/orangepi3-lts/default/vnc/x11vnc@.service 
+       dest: /etc/systemd/system/x11vnc@.service
+       owner: root 
+       group: root 
+       mode: '0644'
+       backup: yes
