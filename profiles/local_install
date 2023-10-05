@@ -2,6 +2,8 @@ PLAYBOOKS="0000-create_default_user.yaml \
 	   0020-install_packages.yaml \
 	   0040-install_python_modules.yaml \
 	   0060-copy_rns_config.yaml \
-	   0100-enable_rns_service.yml \
 	   0080-copy_rns_service_files.yaml \
+	   0081-copy_vnc_service_files.yaml \
+	   0100-enable_rns_service.yml \
+	   0101-enable_vnc_service.yml \
 	   0120-download_system_tools.yaml"
