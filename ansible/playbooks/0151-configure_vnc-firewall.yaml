@@ -6,10 +6,9 @@
   - name: Print message
     ansible.builtin.debug:
       msg: Configure Firewall - vnc 
-  - name: permit traffic to vnc services 
+  - name: Open port 5900/tcp 
     ansible.posix.firewalld:
-      port: 5900 
-      protocol: tcp 
+      port: 5900/tcp
       zone: public
       permanent: true
       state: enabled

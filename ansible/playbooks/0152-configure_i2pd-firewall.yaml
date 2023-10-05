@@ -6,16 +6,15 @@
   - name: Print message
     ansible.builtin.debug:
       msg: Configure Firewall -  i2pd 
-  - name: permit traffic to i2pd services 
+  - name: Open port 19209/udp 
     ansible.posix.firewalld:
-      port: 19209 
-      protocol: udp 
+      port: 19209/udp
       zone: public
       permanent: true
       state: enabled
+  - name: Open port 19209/tcp 
     ansible.posix.firewalld:
-      port: 19209
-      protocol: tcp 
+      port: 19209/tcp
       zone: public
       permanent: true
       state: enabled

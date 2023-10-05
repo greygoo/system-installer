@@ -6,16 +6,15 @@
   - name: Print message
     ansible.builtin.debug:
       msg: Configure Firewall 
-  - name: permit traffic to rns services 
+  - name: "Open port 42671/udp"
     ansible.posix.firewalld:
-      port: 42671 
-      protocol: udp
+      port: 42671/udp
       zone: public
       permanent: true
       state: enabled
+  - name: "Open port 29716/udp"
     ansible.posix.firewalld:
-      port: 29716 
-      protocol: udp
+      port: 29716/udp
       zone: public
       permanent: true
       state: enabled
