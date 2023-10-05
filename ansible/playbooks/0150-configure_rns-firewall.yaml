@@ -1,0 +1,21 @@
+- name: Configure firewall - rns 
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Configure Firewall 
+  - name: permit traffic to rns services 
+    ansible.posix.firewalld:
+      port: 42671 
+      protocol: udp
+      zone: public
+      permanent: true
+      state: enabled
+    ansible.posix.firewalld:
+      port: 29716 
+      protocol: udp
+      zone: public
+      permanent: true
+      state: enabled

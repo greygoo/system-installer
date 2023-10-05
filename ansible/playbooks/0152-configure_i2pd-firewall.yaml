@@ -1,0 +1,21 @@
+- name: Configure firewall - i2pd 
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Configure Firewall -  i2pd 
+  - name: permit traffic to i2pd services 
+    ansible.posix.firewalld:
+      port: 19209 
+      protocol: udp 
+      zone: public
+      permanent: true
+      state: enabled
+    ansible.posix.firewalld:
+      port: 19209
+      protocol: tcp 
+      zone: public
+      permanent: true
+      state: enabled

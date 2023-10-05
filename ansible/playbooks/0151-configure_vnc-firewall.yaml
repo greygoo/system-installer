@@ -1,0 +1,15 @@
+- name: Configure firewall - vnc 
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Configure Firewall - vnc 
+  - name: permit traffic to vnc services 
+    ansible.posix.firewalld:
+      port: 5900 
+      protocol: tcp 
+      zone: public
+      permanent: true
+      state: enabled
