@@ -1,0 +1,17 @@
+- name: Add osmocom repo 
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Adding repo 
+  - name: Add osmocom apt-key
+    apt_key:
+      url: https://downloads.osmocom.org/packages/osmocom:/latest/Debian_12/Release.key
+      state: present
+  - name: Add osmocom repo 
+    ansible.builtin.apt_repository:
+      repo: deb https://downloads.osmocom.org/packages/osmocom:/latest/Debian_12 ./
+      state: present
+      filename: osmocom-latest.list 

@@ -16,7 +16,7 @@ packages_rns:
 packages_sdr:
   - rtl-sdr
   - gqrx-sdr
-packages_osmocombb:
+packages_osmocom:
   - extrepo
 packages_console:
   - iw

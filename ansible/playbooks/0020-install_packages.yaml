@@ -35,6 +35,11 @@
       pkg:
         "{{ packages_sdr }}"
       update_cache: yes
+  - name: Install osmocom required Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_osmocom }}"
+      update_cache: yes
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
       autoclean: yes
