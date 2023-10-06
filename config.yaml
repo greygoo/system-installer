@@ -16,6 +16,8 @@ packages_rns:
 packages_sdr:
   - rtl-sdr
   - gqrx-sdr
+packages_osmocombb:
+  - extrepo
 packages_console:
   - iw
   - tcpdump
