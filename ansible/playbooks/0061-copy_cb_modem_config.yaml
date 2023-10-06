@@ -1,0 +1,24 @@
+- name: Copy CB modem config
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Copying CB modem config files
+  - name: Copy soundmodem config file
+    ansible.builtin.copy:
+      src: ../config/system/orangepi3-lts/default/soundmodem/soundmodem.conf
+      dest: /etc/ax25/soundmodem.conf
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+  - name: Copy direwolf config file
+    ansible.builtin.copy:
+      src:  ../config/system/orangepi3-lts/default/direwolf/direwolf.conf
+      dest: /etc/direwolf.conf
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes

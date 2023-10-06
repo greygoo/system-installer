@@ -50,3 +50,5 @@ packages_services:
   - i2pd
   - pulseaudio
   - pavucontrol
+  - soundmodem
+  - direwolf
