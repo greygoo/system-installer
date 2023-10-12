@@ -12,4 +12,5 @@ PLAYBOOKS="0000-create_default_user.yaml \
 	   0140-install_desktop.yaml \
            0150-configure_rns-firewall.yaml \
            0151-configure_vnc-firewall.yaml \
-           0152-configure_i2pd-firewall.yaml"
+           0152-configure_i2pd-firewall.yaml \
+	   0160-install_qtsoundmodem.yaml"
