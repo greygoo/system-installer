@@ -22,6 +22,8 @@
     ansible.builtin.unarchive:
       src: http://www.cantab.net/users/john.wiseman/Downloads/Beta/QtSMSource.zip 
       dest: /home/{{ default_user }}/build 
+      owner: "{{ default_user }}"
+      group: users
       remote_src: yes
   - name: Run qmake 
     ansible.builtin.command: /usr/bin/qmake 
@@ -39,8 +41,8 @@
     ansible.builtin.copy:
       src: /home/{{ default_user }}/build/QtSoundModem 
       dest: /usr/local/bin/QtSoundModem
-      owner: "{{ default_user }}" 
-      group: users 
+      owner: root 
+      group: root 
       mode: '0755'
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
