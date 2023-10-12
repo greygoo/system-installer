@@ -52,3 +52,11 @@ packages_services:
   - pavucontrol
   - soundmodem
   - direwolf
+packages_qtsoundmodem:
+  - qtbase5-dev
+  - libqt5serialport5
+  - libqt5serialport5-dev
+  - libfftw3-dev
+  - libpulse-dev
+  - libasound2-dev
+  - libkf5pulseaudioqt-dev

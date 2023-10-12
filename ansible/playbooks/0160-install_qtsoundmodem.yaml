@@ -9,13 +9,7 @@
   - name: Install Build Requirement Packages
     ansible.builtin.apt:
       pkg:
-        - qtbase5-dev
-        - libqt5serialport5
-        - libqt5serialport5-dev
-        - libfftw3-dev
-        - libpulse-dev
-        - libasound2-dev
-        - libkf5pulseaudioqt-dev
+        "{{ packages_qtsoundmodem }}"
       update_cache: yes
   - name: Create ~/build directory if it does not exist
     ansible.builtin.file:
@@ -31,10 +25,16 @@
       remote_src: yes
   - name: Run qmake 
     ansible.builtin.command: /usr/bin/qmake 
-      become: yes
-      become_user: "{{ default_user }}"
-      args:
+    become: yes
+    become_user: "{{ default_user }}"
+    args:
         chdir: /home/{{ default_user }}/build/QtSoundModem 
+  - name: Run make 
+    ansible.builtin.command: /usr/bin/make 
+    become: yes
+    become_user: "{{ default_user }}"
+    args:
+      chdir: /home/{{ default_user }}/build/QtSoundModem 
   - name: Copy QtSoundModem to /usr/local/bin 
     ansible.builtin.copy:
       src: /home/{{ default_user }}/build/QtSoundModem 
