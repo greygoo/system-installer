@@ -26,3 +26,8 @@
        url: https://raw.githubusercontent.com/greygoo/system-tools/main/emmc_install/emmc_install.sh
        dest: /usr/local/bin/emmc_install.sh
        mode: '0755'
+   - name: Download nand-sata-autoinstall
+     ansible.builtin.get_url:
+       url: https://raw.githubusercontent.com/greygoo/system-tools/main/emmc_install/nand-sata-autoinstall
+       dest: /usr/local/bin/nand-sata-autoinstall
+       mode: '0755'
