@@ -1,0 +1,22 @@
+- name: Install lokinet
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Adding lokinet repo
+  - name: Add lokinet apt-key
+    apt_key:
+      url: https://deb.oxen.io/pub.gpg
+      state: present
+  - name: Add lokinet repo
+    ansible.builtin.apt_repository:
+      repo: deb https://deb.oxen.io jammy main
+      state: present
+      filename: lokinet-latest.list
+  - name: Install lokinet packages 
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_lokinet }}"
+      update_cache: yes

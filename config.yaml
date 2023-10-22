@@ -18,6 +18,8 @@ packages_sdr:
   - gqrx-sdr
 packages_osmocom:
   - extrepo
+packages_lokinet:
+  - lokinet-gui
 packages_console:
   - iw
   - tcpdump
