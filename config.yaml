@@ -20,6 +20,62 @@ packages_osmocom:
   - extrepo
 packages_lokinet:
   - lokinet-gui
+packages_build:
+  - autoconf
+  - automake
+  - autotools-dev
+  - clang
+  - clang-14
+  - cmake
+  - cmake-data
+  - dh-elpa-helper
+  - emacsen-common
+  - file
+  - gcc-10-base
+  - gfortran
+  - gfortran-11
+  - libarchive13
+  - libclang-common-14-dev
+  - libclang-cpp14
+  - libclang1-14
+  - libgc1
+  - libgcc-10-dev
+  - libgfortran-10-dev
+  - libgfortran-11-dev
+  - libgstreamer-gl1.0-0
+  - libjsoncpp25
+  - libllvm14
+  - libmagic-mgc
+  - libmagic1
+  - libobjc-11-dev
+  - libobjc4
+  - libqt5multimedia5-plugins
+  - libqt5multimediagsttools5
+  - libqt5multimediaquick5
+  - libqt5multimediawidgets5
+  - libqt5qml5
+  - libqt5qmlmodels5
+  - libqt5quick5
+  - librhash0
+  - libsigsegv2
+  - libtext-unidecode-perl
+  - libtool
+  - libudev-dev
+  - libusb-1.0-0-dev
+  - libuv1
+  - libxml-libxml-perl
+  - libxml-namespacesupport-perl
+  - libxml-sax-base-perl
+  - libxml-sax-perl
+  - llvm-14-linker-tools
+  - m4
+  - qtmultimedia5-dev
+  - tex-common texinfo
+  - libqt5serialport5-dev
+  - libfftw3-dev
+  - libpulse-dev
+  - libasound2-dev
+  - libkf5pulseaudioqt-dev
 packages_console:
   - iw
   - tcpdump
@@ -57,9 +113,4 @@ packages_services:
 packages_qtsoundmodem:
   - qtbase5-dev
   - libqt5serialport5
-  - libqt5serialport5-dev
-  - libfftw3-dev
-  - libpulse-dev
-  - libasound2-dev
-  - libkf5pulseaudioqt-dev
   - qterm

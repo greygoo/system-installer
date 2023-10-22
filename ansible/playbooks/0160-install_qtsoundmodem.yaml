@@ -9,6 +9,11 @@
   - name: Install Build Requirement Packages
     ansible.builtin.apt:
       pkg:
+        "{{ packages_build }}"
+      update_cache: yes
+  - name: Install Required Packages
+    ansible.builtin.apt:
+      pkg:
         "{{ packages_qtsoundmodem }}"
       update_cache: yes
   - name: Create ~/build directory if it does not exist
