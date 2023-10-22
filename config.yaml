@@ -62,3 +62,4 @@ packages_qtsoundmodem:
   - libpulse-dev
   - libasound2-dev
   - libkf5pulseaudioqt-dev
+  - qterm
