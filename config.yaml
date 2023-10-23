@@ -103,6 +103,7 @@ packages_desktop:
   - tango-icon-theme
   - gnome-icon-theme
   - dbus-x11
+  - chromium-browser
 packages_services:
   - firewalld
   - i2pd
