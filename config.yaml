@@ -70,7 +70,8 @@ packages_build:
   - llvm-14-linker-tools
   - m4
   - qtmultimedia5-dev
-  - tex-common texinfo
+  - tex-common
+  - texinfo
   - libqt5serialport5-dev
   - libfftw3-dev
   - libpulse-dev
