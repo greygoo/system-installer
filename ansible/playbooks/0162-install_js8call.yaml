@@ -40,7 +40,7 @@
     args:
       chdir: /tmp/build/hamlib-prefix/src 
   - name: Configure hamlib 
-    ansible.builtin.command: '../src/configure --prefix=/tmp/build/hamlib-prefix --disable-shared --enable-static --without-cxx-binding --disable-winradio CFLAGS="-g -O2 -fdata-sections -ffunction-sections" LDFLAGS="-Wl,--gc-sections'
+    ansible.builtin.command: ../src/configure --prefix=/tmp/build/hamlib-prefix --disable-shared --enable-static --without-cxx-binding --disable-winradio CFLAGS=\"-g -O2 -fdata-sections -ffunction-sections\" LDFLAGS=\"-Wl,--gc-sections\"
     args:
       chdir: /tmp/build/hamlib-prefix/build 
   - name: Build hamlib
