@@ -104,6 +104,7 @@ packages_desktop:
   - gnome-icon-theme
   - dbus-x11
   - chromium-browser
+  - webext-ublock-origin-chromium
 packages_services:
   - firewalld
   - i2pd
