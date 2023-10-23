@@ -1,19 +1,19 @@
 PLAYBOOKS="0000-create_default_user.yaml \
 	   0020-install_packages.yaml \
-	   0021-add_osmocom_repo.yaml \
-	   0040-install_python_modules.yaml \
-	   0060-copy_rns_config.yaml \
-	   0080-copy_rns_service_files.yaml \
-	   0061-copy_cb_modem_config.yaml \
-	   0081-copy_vnc_service_files.yaml \
-	   0100-enable_rns_service.yml \
-	   0101-enable_vnc_service.yml \
-	   0120-download_system_tools.yaml \
-	   0140-install_desktop.yaml \
-	   0141-copy_desktop_files.yaml \
-           0150-configure_rns-firewall.yaml \
-           0151-configure_vnc-firewall.yaml \
-           0152-configure_i2pd-firewall.yaml \
-	   0160-install_qtsoundmodem.yaml \
-	   0161-install_lokinet.yaml \
 	   0162-install_js8call.yaml"
+	   #0021-add_osmocom_repo.yaml \
+	   #0040-install_python_modules.yaml \
+	   #0060-copy_rns_config.yaml \
+	   #0080-copy_rns_service_files.yaml \
+	   #0061-copy_cb_modem_config.yaml \
+	   #0081-copy_vnc_service_files.yaml \
+	   #0100-enable_rns_service.yml \
+	   #0101-enable_vnc_service.yml \
+	   #0120-download_system_tools.yaml \
+	   0140-install_desktop.yaml \
+	   #0141-copy_desktop_files.yaml \
+           #0150-configure_rns-firewall.yaml \
+           #0151-configure_vnc-firewall.yaml \
+           #0152-configure_i2pd-firewall.yaml \
+	   #0160-install_qtsoundmodem.yaml \
+	   #0161-install_lokinet.yaml \
