@@ -1,0 +1,70 @@
+- name: Install JS8Call 
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Installing JS8Call 
+  - name: Install Build Requirement Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_build }}"
+      update_cache: yes
+  - name: Create /tmp/build directory if it does not exist
+    ansible.builtin.file:
+      path: /tmp/build
+      state: directory
+  - name: Create /tmp/build/js8call-prefix directory if it does not exist
+    ansible.builtin.file:
+      path: /tmp/build/js8call-prefix
+      state: directory
+  - name: Create /tmp/build/js8call-prefix/build directory if it does not exist
+    ansible.builtin.file:
+      path: /tmp/build/js8call-prefix/build
+      state: directory
+  - name: Create /tmp/build/hamlib-prefix directory if it does not exist
+    ansible.builtin.file:
+      path: /tmp/build/hamlib-prefix/build
+      state: directory
+  - name: Checkout JS8Call source 
+    ansible.builtin.git:
+      repo: 'https://bitbucket.org/widefido/js8call.git'
+      dest: /tmp/build/js8call-prefix/src
+  - name: Checkout Hamlib Source
+    ansible.builtin.git:
+      repo: 'https://github.com/Hamlib/Hamlib.git'
+      dest: /tmp/build/hamlib-prefix/src
+  - name: Run hamlib bootstrap 
+    ansible.builtin.command: ./bootstrap 
+    args:
+      chdir: /tmp/build/hamlib-prefix/src 
+  - name: Configure hamlib 
+    ansible.builtin.command: ../src/configure --prefix=/tmp/build/hamlib-prefix --disable-shared --enable-static --without-cxx-binding --disable-winradio CFLAGS="-g -O2 -fdata-sections -ffunction-sections" LDFLAGS="-Wl,--gc-sections
+    args:
+      chdir: /tmp/build/hamlib-prefix/build 
+  - name: Build hamlib
+    ansible.builtin.command: make
+    args:
+      chdir: /tmp/build/hamlib-prefix/build
+  - name: Install hamlib
+    ansible.builtin.command: make install-strip
+    args:
+      chdir: /tmp/build/hamlib-prefix/build
+  - name: Configure js8cll 
+    ansible.builtin.command: cmake -D CMAKE_PREFIX_PATH=/tmp/build/hamlib-prefix -D CMAKE_INSTALL_PREFIX=/tmp/build/js8call-prefix ../src 
+    args:
+      chdir: /tmp/build/js8call-prefix/build
+  - name: Build js8call package 
+    ansible.builtin.command: make package
+    args:
+      chdir: /tmp/build/js8call-prefix/build
+  - name: Install js8call Package 
+    ansible.builtin.apt:
+      deb: /tmp/build/js8call-prefix/build/js8call_2.2.1-devel_arm64.deb 
+  - name: Remove useless packages from the cache
+    ansible.builtin.apt:
+      autoclean: yes
+  - name: Remove dependencies that are no longer required
+    ansible.builtin.apt:
+      autoremove: yes
