@@ -1,0 +1,47 @@
+- name: Install qFlipper
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Installing qFlipper
+  - name: Install Build Requirement Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_build }}"
+      update_cache: yes
+  - name: Create /tmp/build directory if it does not exist
+    ansible.builtin.file:
+      path: /tmp/build
+      state: directory
+  - name: Checkout qFlipper source
+    ansible.builtin.git:
+      repo: 'https://github.com/flipperdevices/qFlipper.git'
+      dest: /tmp/build/qFlipper
+  - name: Create /tmp/build/qFlipper/build directory if it does not exist
+    ansible.builtin.file:
+      path: /tmp/build/qFlipper/build
+      state: directory
+  - name: Run qmake
+    ansible.builtin.command: qmake ../qFlipper.pro PREFIX=/usr/local -spec linux-g++ CONFIG+=qtquickcompiler
+    args:
+      chdir: /tmp/build/qFlipper/build
+  - name: Run make qmake_all
+    ansible.builtin.command: make qmake_all
+    args:
+      chdir: /tmp/build/qFlipper/build
+  - name: Build qFlipper
+    ansible.builtin.command: make
+    args:
+      chdir: /tmp/build/qFlipper/build
+  - name: Install qFlipper
+    ansible.builtin.command: make install
+    args:
+      chdir: /tmp/build/qFlipper/build
+  - name: Remove useless packages from the cache
+    ansible.builtin.apt:
+      autoclean: yes
+  - name: Remove dependencies that are no longer required
+    ansible.builtin.apt:
+      autoremove: yes
