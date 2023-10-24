@@ -42,7 +42,6 @@ packages_build_signalserver:
   - libllvm11
   - libmd-dev
   - libncurses-dev
-  - libncurses5-dev
   - llvm-11
   - llvm-11-linker-tools
   - llvm-11-runtime
