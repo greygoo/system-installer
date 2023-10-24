@@ -28,6 +28,24 @@ packages_qflipper:
   - qml-module-qtquick-layouts
   - qml-module-qtquick-controls2
   - qml-module-qtquick-templates2
+packages_signalserver_gui:
+  - python3-pip-whl
+  - python3-setuptools-whl
+  - python3.10-venv
+packages_build_signalserver:
+  - ghc
+  - libbsd-dev
+  - libbz2-dev
+  - libghc-bzlib-dev
+  - libgmp-dev
+  - libgmpxx4ldbl
+  - libllvm11
+  - libmd-dev
+  - libncurses-dev
+  - libncurses5-dev
+  - llvm-11
+  - llvm-11-linker-tools
+  - llvm-11-runtime
 packages_build:
   - autoconf
   - automake
