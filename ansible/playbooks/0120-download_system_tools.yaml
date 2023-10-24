@@ -1,38 +1,38 @@
 - name: Download system tools 
   hosts: localhost
   tasks:
-   - name: Ping my hosts
-     ansible.builtin.ping:
-   - name: Print message
-     ansible.builtin.debug:
-       msg: Download system tools 
-   - name: Download set_lora_device.sh
-     ansible.builtin.get_url:
-       url: https://raw.githubusercontent.com/greygoo/system-tools/main/set_lora_device/set_lora_device.sh
-       dest: /usr/local/bin/set_lora_device.sh
-       mode: '0755'
-   - name: Download lora_config.sh
-     ansible.builtin.get_url:
-       url: https://raw.githubusercontent.com/greygoo/system-tools/main/lora_config/lora_config.sh
-       dest: /usr/local/bin/lora_config.sh
-       mode: '0755'
-   - name: Download factory_reset.sh
-     ansible.builtin.get_url:
-       url: https://raw.githubusercontent.com/greygoo/system-tools/main/factory_reset/factory_restore.sh 
-       dest: /usr/local/bin/factory_reset.sh
-       mode: '0755'
-   - name: Download emmc_install.sh
-     ansible.builtin.get_url:
-       url: https://raw.githubusercontent.com/greygoo/system-tools/main/emmc_install/emmc_install.sh
-       dest: /usr/local/bin/emmc_install.sh
-       mode: '0755'
-   - name: Download nand-sata-autoinstall
-     ansible.builtin.get_url:
-       url: https://raw.githubusercontent.com/greygoo/system-tools/main/emmc_install/nand-sata-autoinstall
-       dest: /usr/local/bin/nand-sata-autoinstall
-       mode: '0755'
-   - name: Download emmc-install service file 
-     ansible.builtin.get_url:
-       url: "https://raw.githubusercontent.com/greygoo/system-tools/main/emmc_install/emmc-install@.service"
-       dest: "/etc/systemd/system/emmc-install@.service"
-       mode: '0644'
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Download system tools 
+  - name: Download set_lora_device.sh
+    ansible.builtin.get_url:
+      url: https://raw.githubusercontent.com/greygoo/system-tools/main/set_lora_device/set_lora_device.sh
+      dest: /usr/local/bin/set_lora_device.sh
+      mode: '0755'
+  - name: Download lora_config.sh
+    ansible.builtin.get_url:
+      url: https://raw.githubusercontent.com/greygoo/system-tools/main/lora_config/lora_config.sh
+      dest: /usr/local/bin/lora_config.sh
+      mode: '0755'
+  - name: Download factory_reset.sh
+    ansible.builtin.get_url:
+      url: https://raw.githubusercontent.com/greygoo/system-tools/main/factory_reset/factory_restore.sh 
+      dest: /usr/local/bin/factory_reset.sh
+      mode: '0755'
+  - name: Download emmc_install.sh
+    ansible.builtin.get_url:
+      url: https://raw.githubusercontent.com/greygoo/system-tools/main/emmc_install/emmc_install.sh
+      dest: /usr/local/bin/emmc_install.sh
+      mode: '0755'
+  - name: Download nand-sata-autoinstall
+    ansible.builtin.get_url:
+      url: https://raw.githubusercontent.com/greygoo/system-tools/main/emmc_install/nand-sata-autoinstall
+      dest: /usr/local/bin/nand-sata-autoinstall
+      mode: '0755'
+  - name: Download emmc-install service file 
+    ansible.builtin.get_url:
+      url: "https://raw.githubusercontent.com/greygoo/system-tools/main/emmc_install/emmc-install@.service"
+      dest: "/etc/systemd/system/emmc-install@.service"
+      mode: '0644'

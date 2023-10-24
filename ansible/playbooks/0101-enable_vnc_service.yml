@@ -1,13 +1,13 @@
 - name: Enable vnc services 
   hosts: localhost
   tasks:
-   - name: Ping my hosts
-     ansible.builtin.ping:
-   - name: Print message
-     ansible.builtin.debug:
-       msg: Enabling vnc service
-   - name: Enable vnc service
-     ansible.builtin.systemd:
-       name: x11vnc@:0
-       enabled: true
-       masked: no
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Enabling vnc service
+  - name: Enable vnc service
+    ansible.builtin.systemd:
+      name: x11vnc@:0
+      enabled: true
+      masked: no

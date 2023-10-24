@@ -1,24 +1,24 @@
 - name: Copy rns user config
   hosts: localhost
   tasks:
-   - name: Ping my hosts
-     ansible.builtin.ping:
-   - name: Print message
-     ansible.builtin.debug:
-       msg: Copying rns systemd service files
-   - name: Copy rns systemd service file 
-     ansible.builtin.copy:
-       src: ../config/system/orangepi3-lts/default/rns/rnsd.service 
-       dest: /etc/systemd/system/rnsd.service
-       owner: root 
-       group: root 
-       mode: '0644'
-       backup: yes
-   - name: Copy NomadNet service file 
-     ansible.builtin.copy:
-       src:  ../config/system/orangepi3-lts/default/rns/nomadnet.service
-       dest: /etc/systemd/system/nomadnet.service 
-       owner: root 
-       group: root 
-       mode: '0644'
-       backup: yes
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Copying rns systemd service files
+  - name: Copy rns systemd service file 
+    ansible.builtin.copy:
+      src: ../config/system/orangepi3-lts/default/rns/rnsd.service 
+      dest: /etc/systemd/system/rnsd.service
+      owner: root 
+      group: root 
+      mode: '0644'
+      backup: yes
+  - name: Copy NomadNet service file 
+    ansible.builtin.copy:
+      src:  ../config/system/orangepi3-lts/default/rns/nomadnet.service
+      dest: /etc/systemd/system/nomadnet.service 
+      owner: root 
+      group: root 
+      mode: '0644'
+      backup: yes
