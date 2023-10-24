@@ -1,41 +1,66 @@
-- name: Copy desktop config and files
+- name: Install Desktop Theme 
   hosts: localhost
   tasks:
    - name: Ping my hosts
      ansible.builtin.ping:
    - name: Print message
      ansible.builtin.debug:
-       msg: Copy desktop files and config 
-   - name: Create ~/backgrounds directory if it does not yet exist
+       msg: Install Desktop Theme 
+   - name: Create /usr/share/backgrounds/lightdm-gtk-greeter/ directory if it does not yet exist
      ansible.builtin.file:
-       path: /home/{{ default_user }}/backgrounds
+       path: /usr/share/backgrounds/lightdm-gtk-greeter/ 
        state: directory
-       owner: "{{ default_user }}"
-       group: users
-       mode: '0755'
-   - name: Copy desktop background image
-     ansible.builtin.copy:
-       src: ../config/user/orangepi3-lts/default/desktop/background_desktop.png
-       dest: /home/{{ default_user }}/backgrounds/default.png
-       owner: "{{ default_user }}"
-       group: users
-       mode: '0644'
-       backup: yes
-   - name: Create /usr/share/backgrounds/ directory if it does not exist
-     ansible.builtin.file:
-       path: /usr/share/backgrounds/lightdm-gtk-greeter
-       state: directory
-       owner: root
+       owner: root 
        group: root 
        mode: '0755'
    - name: Copy login background image 
      ansible.builtin.copy:
-       src: ../config/user/orangepi3-lts/default/desktop/background_login.png 
+       src: ../config/system/orangepi3-lts/default/desktop/login_background.jpg  
        dest: /usr/share/backgrounds/lightdm-gtk-greeter/default.png
        owner: root 
        group: root 
        mode: '0644'
        backup: yes
+   - name: Create /usr/share/backgrounds/xfce directory if it does not yet exist
+     ansible.builtin.file:
+       path: /usr/share/backgrounds/xfce
+       state: directory
+       owner: root 
+       group: root 
+       mode: '0755'
+   - name: Copy desktop background image
+     ansible.builtin.copy:
+       src: ../config/system/orangepi3-lts/default/desktop/desktop_background.jpg 
+       dest: /usr/share/backgrounds/xfce/default.jpg 
+       owner: root 
+       group: root 
+       mode: '0644'
+       backup: yes
+   - name: Create /usr/share/themes if it does not yet exist
+     ansible.builtin.file:
+       path: /usr/share/themes
+       state: directory
+       owner: root
+       group: root
+       mode: '0755'
+   - name: Install Dark GTK Theme
+     ansible.builtin.unarchive:
+     src: ../config/system/orangepi3-lts/default/desktop/gtk_theme/Default_Dark.tar.gz 
+     dest: /usr/share/themes 
+   - name: Install Light GTK Theme 
+     ansible.builtin.unarchive:
+     src: ../config/system/orangepi3-lts/default/desktop/gtk_theme/Default_Light.tar.gz
+     dest: /usr/share/themes 
+   - name: Create /usr/share/icons if it does not yet exist
+     ansible.builtin.file:
+       path: /usr/share/icons
+       state: directory
+       owner: root
+       group: root
+   - name: Install Icon Theme 
+     ansible.builtin.unarchive:
+     src: ../config/system/orangepi3-lts/default/desktop/icon_theme/Default_Icons.tar.gz
+     dest: /usr/share/icons
    - name: Create ~/.config/xfce4/xfconf/xfce-perchannel-xml/ directory if it does not exist
      ansible.builtin.file:
        path: /home/{{ default_user }}/.config/xfce4/xfconf/xfce-perchannel-xml/
