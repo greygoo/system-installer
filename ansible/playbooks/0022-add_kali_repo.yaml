@@ -1,0 +1,17 @@
+- name: Add Kali repo 
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Adding repo 
+  - name: Add Kali apt-key
+    apt_key:
+      url: https://archive.kali.org/archive-key.asc 
+      state: present
+  - name: Add Kali repo 
+    ansible.builtin.apt_repository:
+      repo: deb https://http.kali.org/kali kali-rolling main non-free contrib 
+      state: present
+      filename: /etc/apt/sources.list.d/kali.list 
