@@ -20,6 +20,8 @@ packages_osmocom:
   - extrepo
 packages_lokinet:
   - lokinet-gui
+packages_qflipper:
+  - qml-module-qt-labs-platform
 packages_build:
   - autoconf
   - automake
