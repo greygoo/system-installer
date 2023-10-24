@@ -68,10 +68,18 @@
       owner: "{{ default_user }}"
       group: users
       mode: '0755'
-  - name: Copy desktop config 
+  - name: Copy desktop config xfce-desktop.xml 
     ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/desktop/xfce4-desktop.xml 
       dest: /home/{{ default_user }}/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml 
+      owner: "{{ default_user }}"
+      group: users
+      mode: '0644'
+      backup: yes
+  - name: Copy desktop config xsettings.xml 
+    ansible.builtin.copy:
+      src: ../config/user/orangepi3-lts/default/desktop/xsettings.xml 
+      dest: /home/{{ default_user }}/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml 
       owner: "{{ default_user }}"
       group: users
       mode: '0644'
