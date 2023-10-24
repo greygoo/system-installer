@@ -16,4 +16,5 @@ PLAYBOOKS="0000-create_default_user.yaml \
 	   0160-install_qtsoundmodem.yaml \
 	   0161-install_lokinet.yaml \
 	   0162-install_js8call.yaml \
-	   0163-install_qflipper.yaml"
+	   0163-install_qflipper.yaml \
+	   0164-install_signalserver.yaml"

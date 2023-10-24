@@ -46,6 +46,11 @@ packages_build_signalserver:
   - llvm-11
   - llvm-11-linker-tools
   - llvm-11-runtime
+packages_build_puremaps:
+  - gettext
+  - gettext-base
+  - qtpositioning5-dev
+  - qttools5-dev
 packages_build:
   - autoconf
   - automake
