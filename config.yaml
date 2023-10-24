@@ -77,6 +77,27 @@ packages_build:
   - libpulse-dev
   - libasound2-dev
   - libkf5pulseaudioqt-dev
+  - libqt5qmlworkerscript5
+  - libqt5quickcontrols2-5
+  - libqt5quickparticles5
+  - libqt5quickshapes5
+  - libqt5quicktemplates2-5
+  - libqt5quicktest5
+  - libqt5quickwidgets5
+  - libqt5waylandclient5
+  - libqt5waylandclient5-dev
+  - libqt5waylandcompositor5
+  - qml-module-qtgraphicaleffects
+  - qml-module-qtquick-window2
+  - qml-module-qtquick2
+  - qt5-qmltooling-plugins
+  - qtdeclarative5-dev
+  - qtdeclarative5-dev-tools
+  - qtquickcontrols2-5-dev
+  - qtwayland5
+  - qtwayland5-dev-tools
+  - libqt5svg5
+  - libqt5svg5-dev
 packages_console:
   - iw
   - tcpdump
