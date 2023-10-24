@@ -22,6 +22,12 @@ packages_lokinet:
   - lokinet-gui
 packages_qflipper:
   - qml-module-qt-labs-platform
+  - qml-module-qtqml
+  - qml-module-qtqml-models2
+  - qml-module-qtquick-controls
+  - qml-module-qtquick-layouts
+  - qml-module-qtquick-controls2
+  - qml-module-qtquick-templates2
 packages_build:
   - autoconf
   - automake
