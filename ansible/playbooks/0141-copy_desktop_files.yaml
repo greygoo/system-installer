@@ -59,7 +59,7 @@
       group: root
   - name: Install Icon Theme 
     ansible.builtin.unarchive:
-      src: ../config/system/orangepi3-lts/default/desktop/icon_theme/Default_Icons.tar.gz
+      src: ../config/system/orangepi3-lts/default/desktop/icon_theme/Default_Icons.tar.xz
       dest: /usr/share/icons
   - name: Create ~/.config/xfce4/xfconf/xfce-perchannel-xml/ directory if it does not exist
     ansible.builtin.file:
