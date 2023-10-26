@@ -20,14 +20,6 @@ packages_osmocom:
   - extrepo
 packages_lokinet:
   - lokinet-gui
-packages_qflipper:
-  - qml-module-qt-labs-platform
-  - qml-module-qtqml
-  - qml-module-qtqml-models2
-  - qml-module-qtquick-controls
-  - qml-module-qtquick-layouts
-  - qml-module-qtquick-controls2
-  - qml-module-qtquick-templates2
 packages_signalserver_gui:
   - python3-pip-whl
   - python3-setuptools-whl
@@ -45,6 +37,24 @@ packages_build_signalserver:
   - llvm-11
   - llvm-11-linker-tools
   - llvm-11-runtime
+packages_qflipper:
+  - libqt5quickcontrols2-5
+  - libqt5qml5
+  - libqt5qmlmodels5
+  - libqt5quick5
+  - libqt5quicktemplates2-5
+  - qml-module-qtquick-window2
+  - qml-module-qt-labs-platform
+  - qml-module-qtqml-models2
+  - qml-module-qtquick-controls
+  - qml-module-qtquick-layouts
+  - qml-module-qtquick-controls2
+  - qml-module-qtquick-templates2
+  - libqt5qmlworkerscript5
+  - qml-module-qtgraphicaleffects
+  - qml-module-qtqml
+  - qml-module-qtquick2
+  - libqt5svg5
 packages_build:
   - autoconf
   - automake
@@ -78,9 +88,6 @@ packages_build:
   - libqt5multimediagsttools5
   - libqt5multimediaquick5
   - libqt5multimediawidgets5
-  - libqt5qml5
-  - libqt5qmlmodels5
-  - libqt5quick5
   - librhash0
   - libsigsegv2
   - libtext-unidecode-perl
@@ -102,26 +109,19 @@ packages_build:
   - libpulse-dev
   - libasound2-dev
   - libkf5pulseaudioqt-dev
-  - libqt5qmlworkerscript5
-  - libqt5quickcontrols2-5
   - libqt5quickparticles5
   - libqt5quickshapes5
-  - libqt5quicktemplates2-5
   - libqt5quicktest5
   - libqt5quickwidgets5
   - libqt5waylandclient5
   - libqt5waylandclient5-dev
   - libqt5waylandcompositor5
-  - qml-module-qtgraphicaleffects
-  - qml-module-qtquick-window2
-  - qml-module-qtquick2
   - qt5-qmltooling-plugins
   - qtdeclarative5-dev
   - qtdeclarative5-dev-tools
   - qtquickcontrols2-5-dev
   - qtwayland5
   - qtwayland5-dev-tools
-  - libqt5svg5
   - libqt5svg5-dev
   - libhyphen0
   - libqt5designer5
