@@ -16,34 +16,34 @@
       pkg:
         "{{ packages_qflipper }}"
       update_cache: yes
-  - name: Create /tmp/build directory if it does not exist
+  - name: Create /opt/build directory if it does not exist
     ansible.builtin.file:
-      path: /tmp/build
+      path: /opt/build
       state: directory
   - name: Checkout qFlipper source
     ansible.builtin.git:
       repo: 'https://github.com/flipperdevices/qFlipper.git'
-      dest: /tmp/build/qFlipper
-  - name: Create /tmp/build/qFlipper/build directory if it does not exist
+      dest: /opt/build/qFlipper
+  - name: Create /opt/build/qFlipper/build directory if it does not exist
     ansible.builtin.file:
-      path: /tmp/build/qFlipper/build
+      path: /opt/build/qFlipper/build
       state: directory
   - name: Run qmake
     ansible.builtin.command: qmake ../qFlipper.pro PREFIX=/usr/local -spec linux-g++ CONFIG+=qtquickcompiler
     args:
-      chdir: /tmp/build/qFlipper/build
+      chdir: /opt/build/qFlipper/build
   - name: Run make qmake_all
     ansible.builtin.command: make qmake_all
     args:
-      chdir: /tmp/build/qFlipper/build
+      chdir: /opt/build/qFlipper/build
   - name: Build qFlipper
     ansible.builtin.command: make
     args:
-      chdir: /tmp/build/qFlipper/build
+      chdir: /opt/build/qFlipper/build
   - name: Install qFlipper
     ansible.builtin.command: make install
     args:
-      chdir: /tmp/build/qFlipper/build
+      chdir: /opt/build/qFlipper/build
   - name: Copy qFlipper udev rules 
     ansible.builtin.copy:
       src: ../config/system/orangepi3-lts/default/qflipper/42-flipperzero.rules

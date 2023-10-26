@@ -15,30 +15,30 @@
       pkg:
         "{{ packages_build_signalserver }}"
       update_cache: yes
-  - name: Create /tmp/build directory if it does not exist
+  - name: Create /opt/build directory if it does not exist
     ansible.builtin.file:
-      path: /tmp/build
+      path: /opt/build
       state: directory
   - name: Checkout Signal-Server source 
     ansible.builtin.git:
       repo: 'https://github.com/Cloud-RF/Signal-Server.git'
-      dest: /tmp/build/Signal-Server
-  - name: Create /tmp/build/Signal-Server/build directory if it does not exist
+      dest: /opt/build/Signal-Server
+  - name: Create /opt/build/Signal-Server/build directory if it does not exist
     ansible.builtin.file:
-      path: /tmp/build/Signal-Server/build
+      path: /opt/build/Signal-Server/build
       state: directory
   - name: Configure Signal-Server 
     ansible.builtin.command: cmake .. 
     args:
-      chdir: /tmp/build/Signal-Server/build
+      chdir: /opt/build/Signal-Server/build
   - name: Build Signal-Server
     ansible.builtin.command: make
     args:
-      chdir: /tmp/build/Signal-Server/build
+      chdir: /opt/build/Signal-Server/build
   - name: Install Signal-Server 
     ansible.builtin.command: make install
     args:
-      chdir: /tmp/build/Signal-Server/build
+      chdir: /opt/build/Signal-Server/build
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
       autoclean: yes

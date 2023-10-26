@@ -11,57 +11,57 @@
       pkg:
         "{{ packages_build }}"
       update_cache: yes
-  - name: Create /tmp/build directory if it does not exist
+  - name: Create /opt/build directory if it does not exist
     ansible.builtin.file:
-      path: /tmp/build
+      path: /opt/build
       state: directory
-  - name: Create /tmp/build/js8call-prefix directory if it does not exist
+  - name: Create /opt/build/js8call-prefix directory if it does not exist
     ansible.builtin.file:
-      path: /tmp/build/js8call-prefix
+      path: /opt/build/js8call-prefix
       state: directory
-  - name: Create /tmp/build/js8call-prefix/build directory if it does not exist
+  - name: Create /opt/build/js8call-prefix/build directory if it does not exist
     ansible.builtin.file:
-      path: /tmp/build/js8call-prefix/build
+      path: /opt/build/js8call-prefix/build
       state: directory
-  - name: Create /tmp/build/hamlib-prefix directory if it does not exist
+  - name: Create /opt/build/hamlib-prefix directory if it does not exist
     ansible.builtin.file:
-      path: /tmp/build/hamlib-prefix/build
+      path: /opt/build/hamlib-prefix/build
       state: directory
   - name: Checkout JS8Call source 
     ansible.builtin.git:
       repo: 'https://bitbucket.org/widefido/js8call.git'
-      dest: /tmp/build/js8call-prefix/src
+      dest: /opt/build/js8call-prefix/src
   - name: Checkout Hamlib Source
     ansible.builtin.git:
       repo: 'https://github.com/Hamlib/Hamlib.git'
-      dest: /tmp/build/hamlib-prefix/src
+      dest: /opt/build/hamlib-prefix/src
   - name: Run hamlib bootstrap 
     ansible.builtin.command: ./bootstrap 
     args:
-      chdir: /tmp/build/hamlib-prefix/src 
+      chdir: /opt/build/hamlib-prefix/src 
   - name: Configure hamlib 
-    ansible.builtin.command: '../src/configure --prefix=/tmp/build/hamlib-prefix --disable-shared --enable-static --without-cxx-binding --disable-winradio CFLAGS="-g -O2 -fdata-sections -ffunction-sections" LDFLAGS="-Wl,--gc-sections"'
+    ansible.builtin.command: '../src/configure --prefix=/opt/build/hamlib-prefix --disable-shared --enable-static --without-cxx-binding --disable-winradio CFLAGS="-g -O2 -fdata-sections -ffunction-sections" LDFLAGS="-Wl,--gc-sections"'
     args:
-      chdir: /tmp/build/hamlib-prefix/build 
+      chdir: /opt/build/hamlib-prefix/build 
   - name: Build hamlib
     ansible.builtin.command: make
     args:
-      chdir: /tmp/build/hamlib-prefix/build
+      chdir: /opt/build/hamlib-prefix/build
   - name: Install hamlib
     ansible.builtin.command: make install-strip
     args:
-      chdir: /tmp/build/hamlib-prefix/build
+      chdir: /opt/build/hamlib-prefix/build
   - name: Configure js8cll 
-    ansible.builtin.command: cmake -D CMAKE_PREFIX_PATH=/tmp/build/hamlib-prefix -D CMAKE_INSTALL_PREFIX=/usr/local ../src 
+    ansible.builtin.command: cmake -D CMAKE_PREFIX_PATH=/opt/build/hamlib-prefix -D CMAKE_INSTALL_PREFIX=/usr/local ../src 
     args:
-      chdir: /tmp/build/js8call-prefix/build
+      chdir: /opt/build/js8call-prefix/build
   - name: Build js8call package 
     ansible.builtin.command: make package
     args:
-      chdir: /tmp/build/js8call-prefix/build
+      chdir: /opt/build/js8call-prefix/build
   - name: Install js8call Package 
     ansible.builtin.apt:
-      deb: /tmp/build/js8call-prefix/build/js8call_2.2.1-devel_arm64.deb 
+      deb: /opt/build/js8call-prefix/build/js8call_2.2.1-devel_arm64.deb 
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
       autoclean: yes
