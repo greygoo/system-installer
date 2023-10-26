@@ -52,7 +52,7 @@
     args:
       chdir: /tmp/build/hamlib-prefix/build
   - name: Configure js8cll 
-    ansible.builtin.command: cmake -D CMAKE_PREFIX_PATH=/tmp/build/hamlib-prefix -D CMAKE_INSTALL_PREFIX=/usr/local/js8call-prefix ../src 
+    ansible.builtin.command: cmake -D CMAKE_PREFIX_PATH=/tmp/build/hamlib-prefix -D CMAKE_INSTALL_PREFIX=/usr/local ../src 
     args:
       chdir: /tmp/build/js8call-prefix/build
   - name: Build js8call package 
