@@ -18,30 +18,36 @@
       update_cache: yes
   - name: Create ~/build directory if it does not exist
     ansible.builtin.file:
-      path: /home/{{ default_user }}/build
+      path: /opt/build
       state: directory
-      owner: "{{ default_user }}"
-      group: users
+      owner: root 
+      group: root 
       mode: '0755'
   - name: Download and unpack QTSoundmodem source 
     ansible.builtin.unarchive:
       src: http://www.cantab.net/users/john.wiseman/Downloads/Beta/QtSMSource.zip 
-      dest: /home/{{ default_user }}/build 
-      owner: "{{ default_user }}"
-      group: users
+      dest: /opt/build 
+      owner: root 
+      group: root
       remote_src: yes
   - name: Run qmake 
     ansible.builtin.command: /usr/bin/qmake 
-    become: yes
-    become_user: "{{ default_user }}"
     args:
-        chdir: /home/{{ default_user }}/build/QtSoundModem 
+        chdir: /opt/build/QtSoundModem 
   - name: Run make 
     ansible.builtin.command: /usr/bin/make 
-    become: yes
-    become_user: "{{ default_user }}"
     args:
-      chdir: /home/{{ default_user }}/build/QtSoundModem 
+      chdir: /opt/build/QtSoundModem 
+  - name: Run make install 
+    ansible.builtin.command: /usr/bin/make install 
+    args:
+      chdir: /opt/build/QtSoundModem 
+  - name: Remove useless packages from the cache
+    ansible.builtin.apt:
+      autoclean: yes
+  - name: Remove dependencies that are no longer required
+    ansible.builtin.apt:
+      autoremove: yes
   - name: Copy QtSoundModem to /usr/local/bin 
     ansible.builtin.copy:
       src: /home/{{ default_user }}/build/QtSoundModem 
