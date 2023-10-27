@@ -31,26 +31,28 @@
       group: root
       remote_src: yes
   - name: Run qmake 
-    ansible.builtin.command: /usr/bin/qmake 
+    ansible.builtin.command: qmake 
     args:
         chdir: /opt/build/QtSoundModem 
   - name: Run make 
-    ansible.builtin.command: /usr/bin/make 
+    ansible.builtin.command: make 
     args:
       chdir: /opt/build/QtSoundModem 
   - name: Run make install 
-    ansible.builtin.command: /usr/bin/make install 
+    ansible.builtin.command: make install 
     args:
       chdir: /opt/build/QtSoundModem 
-  - name: Remove useless packages from the cache
-    ansible.builtin.apt:
-      autoclean: yes
+  - name: Copy QtSoundmodem to /usr/local/bin 
+    ansible.builtin.copy:
+      src: /opt/build/QtSoundModem/QtSoundModem
+      dest: /usr/local/bin/QtSoundModem 
+      owner: root
+      group: root
+      mode: '0755'
+      backup: yes
   - name: Remove dependencies that are no longer required
     ansible.builtin.apt:
       autoremove: yes
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
       autoclean: yes
-  - name: Remove dependencies that are no longer required
-    ansible.builtin.apt:
-      autoremove: yes

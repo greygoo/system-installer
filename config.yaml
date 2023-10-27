@@ -20,6 +20,7 @@ packages_osmocom:
   - extrepo
 packages_lokinet:
   - lokinet-gui
+  - libuv1
 packages_signalserver_gui:
   - python3-pip-whl
   - python3-setuptools-whl
@@ -55,6 +56,11 @@ packages_qflipper:
   - qml-module-qtqml
   - qml-module-qtquick2
   - libqt5svg5
+packages_js8call:
+  - libgstreamer-gl1.0-0
+  - libqt5multimedia5-plugins
+  - libqt5multimediagsttools5
+  - libqt5multimediawidgets5
 packages_build:
   - autoconf
   - automake
@@ -77,24 +83,19 @@ packages_build:
   - libgcc-10-dev
   - libgfortran-10-dev
   - libgfortran-11-dev
-  - libgstreamer-gl1.0-0
   - libjsoncpp25
   - libllvm14
   - libmagic-mgc
   - libmagic1
   - libobjc-11-dev
   - libobjc4
-  - libqt5multimedia5-plugins
-  - libqt5multimediagsttools5
   - libqt5multimediaquick5
-  - libqt5multimediawidgets5
   - librhash0
   - libsigsegv2
   - libtext-unidecode-perl
   - libtool
   - libudev-dev
   - libusb-1.0-0-dev
-  - libuv1
   - libxml-libxml-perl
   - libxml-namespacesupport-perl
   - libxml-sax-base-perl
@@ -139,6 +140,30 @@ packages_build:
   - qt5-assistant
   - qtattributionsscanner-qt5
   - qttools5-dev-tools
+  - gfortran-13
+  - libblkid-dev
+  - libclang-common-16-dev
+  - libclang-cpp16
+  - libclang1-15
+  - libclang1-16
+  - libgfortran-13-dev
+  - libglib2.0-dev
+  - libglib2.0-dev-bin
+  - libkf5pulseaudioqt3
+  - libllvm16
+  - libmount-dev
+  - libpcre2-32-0
+  - libpcre2-dev
+  - libpcre2-posix3
+  - libpkgconf3
+  - libselinux1-dev
+  - libsepol-dev
+  - llvm-16-linker-tools
+  - pkg-config
+  - pkgconf
+  - pkgconf-bin
+  - texinfo-lib
+  - uuid-dev
 packages_console:
   - iw
   - tcpdump
