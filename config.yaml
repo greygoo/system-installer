@@ -188,7 +188,6 @@ packages_build:
   - qtattributionsscanner-qt5
   - qttools5-dev-tools
   - libblkid-dev
-  - libclang-common-16-dev
   - libclang-cpp16
   - libclang1-15
   - libclang1-16
