@@ -84,6 +84,7 @@ packages_build_signalserver:
   - llvm-11
   - llvm-11-linker-tools
   - llvm-11-runtime
+  - libpfm4
 packages_qflipper:
   - libqt5quickcontrols2-5
   - libqt5qml5
