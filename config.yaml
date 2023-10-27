@@ -5,11 +5,18 @@ packages_rns:
   - build-essential
   - cargo
   - python3-wheel
-  - rust-all
-  - python3-setuptools-rust
-  - python3-pil
   - python3-pygame  
 packages_build_rns:
+  - python3-pil
+  - libimagequant0
+  - libopenjp2-7
+  - libraqm0
+  - libwebpdemux2
+  - libwebpmux3
+  - python3-setuptools-rust
+  - python3-semantic-version
+  - python3-typing-extensions
+  - rust-all
   - python3-dev
   - libexpat1-dev
   - libjs-jquery
