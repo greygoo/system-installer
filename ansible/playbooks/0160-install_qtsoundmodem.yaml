@@ -11,6 +11,11 @@
       pkg:
         "{{ packages_build }}"
       update_cache: yes
+  - name: Install QtSoundModem Build Requirement Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_build_qtsoundmodem }}"
+      update_cache: yes
   - name: Install Required Packages
     ansible.builtin.apt:
       pkg:

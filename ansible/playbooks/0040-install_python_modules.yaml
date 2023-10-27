@@ -1,12 +1,16 @@
-- name: Install python modules 
+- name: Install RNS and tools
   hosts: localhost
   tasks:
   - name: Ping my hosts
     ansible.builtin.ping:
   - name: Print message
     ansible.builtin.debug:
-      msg: Installing Python Modules
-  - name: Install Python Module rns 
+      msg: Installing RNS and Tools Modules
+  - name: Install RNS Required Build Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_build_rns }}"
+  - name: Install RNS and tools 
     ansible.builtin.command: /usr/bin/pip3 install rns lxmf nomadnet requests sbapp
     become: yes
     become_user: nomad 
