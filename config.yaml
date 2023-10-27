@@ -187,7 +187,6 @@ packages_build:
   - qt5-assistant
   - qtattributionsscanner-qt5
   - qttools5-dev-tools
-  - gfortran-13
   - libblkid-dev
   - libclang-common-16-dev
   - libclang-cpp16
