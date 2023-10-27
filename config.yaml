@@ -164,6 +164,16 @@ packages_build:
   - pkgconf-bin
   - texinfo-lib
   - uuid-dev
+  - libglu1-mesa-dev
+  - libqt5concurrent5
+  - libqt5sql5
+  - libqt5test5
+  - libvulkan-dev
+  - libvulkan1
+  - libxext-dev
+  - qt5-qmake
+  - qt5-qmake-bin
+  - qtbase5-dev-tools
 packages_console:
   - iw
   - tcpdump
