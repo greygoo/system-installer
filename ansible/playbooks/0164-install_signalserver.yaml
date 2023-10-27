@@ -28,7 +28,7 @@
       path: /opt/build/Signal-Server/build
       state: directory
   - name: Configure Signal-Server 
-    ansible.builtin.command: cmake .. 
+    ansible.builtin.command: cmake ../src
     args:
       chdir: /opt/build/Signal-Server/build
   - name: Build Signal-Server
