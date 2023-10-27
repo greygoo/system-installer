@@ -1,0 +1,19 @@
+- name: Uninstalling Build Requirment Packages
+  hosts: localhost
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Uninstalling Build Requirment Packages 
+  - name:  Uninstall Build Requirment Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_build }}"
+      update_cache: yes
+  - name: Remove useless packages from the cache
+    ansible.builtin.apt:
+      autoclean: yes
+  - name: Remove dependencies that are no longer required
+    ansible.builtin.apt:
+      autoremove: yes

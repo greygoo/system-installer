@@ -40,6 +40,11 @@
       pkg:
         "{{ packages_osmocom }}"
       update_cache: yes
+  - name: Install build required Packages
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_build }}"
+      update_cache: yes
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
       autoclean: yes
