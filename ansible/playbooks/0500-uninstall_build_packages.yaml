@@ -8,9 +8,9 @@
       msg: Uninstalling Build Requirment Packages 
   - name:  Uninstall Build Requirment Packages
     ansible.builtin.apt:
-      pkg:
+      name:
         "{{ packages_build }}"
-      update_cache: yes
+      state: absent
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
       autoclean: yes
