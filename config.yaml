@@ -200,7 +200,6 @@ packages_build:
   - libselinux1-dev
   - libsepol-dev
   - pkg-config
-  - pkgconf
   - uuid-dev
   - libglu1-mesa-dev
   - libqt5concurrent5
