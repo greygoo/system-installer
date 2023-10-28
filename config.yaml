@@ -189,7 +189,6 @@ packages_build:
   - qttools5-dev-tools
   - libblkid-dev
   - libclang1-15
-  - libgfortran-13-dev
   - libglib2.0-dev
   - libglib2.0-dev-bin
   - libkf5pulseaudioqt3
