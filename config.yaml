@@ -192,7 +192,6 @@ packages_build:
   - libglib2.0-dev
   - libglib2.0-dev-bin
   - libkf5pulseaudioqt3
-  - libllvm16
   - libmount-dev
   - libpcre2-32-0
   - libpcre2-dev
