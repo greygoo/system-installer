@@ -201,7 +201,6 @@ packages_build:
   - libsepol-dev
   - pkg-config
   - pkgconf
-  - pkgconf-bin
   - texinfo-lib
   - uuid-dev
   - libglu1-mesa-dev
