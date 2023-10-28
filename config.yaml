@@ -201,7 +201,6 @@ packages_build:
   - libsepol-dev
   - pkg-config
   - pkgconf
-  - texinfo-lib
   - uuid-dev
   - libglu1-mesa-dev
   - libqt5concurrent5
