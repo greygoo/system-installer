@@ -199,7 +199,6 @@ packages_build:
   - libpkgconf3
   - libselinux1-dev
   - libsepol-dev
-  - llvm-16-linker-tools
   - pkg-config
   - pkgconf
   - pkgconf-bin
