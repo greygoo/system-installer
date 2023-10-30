@@ -1,8 +1,6 @@
 PLAYBOOKS="0000-create_default_user.yaml \
 	   0020-install_packages.yaml \
-	   0021-add_osmocom_repo.yaml \
-	   0022-add_kali_repo.yaml \
-	   0040-install_python_modules.yaml \
+	   0040-install_RNS.yaml \
 	   0060-copy_rns_config.yaml \
 	   0080-copy_rns_service_files.yaml \
 	   0061-copy_cb_modem_config.yaml \
@@ -19,4 +17,6 @@ PLAYBOOKS="0000-create_default_user.yaml \
 	   0161-install_lokinet.yaml \
 	   0162-install_js8call.yaml \
 	   0163-install_qflipper.yaml \
-	   0164-install_signalserver.yaml"
+	   0164-install_signalserver.yaml \
+	   0600-add_kali_repo.yaml \
+	   0601-add_osmocom_repo.yaml"
