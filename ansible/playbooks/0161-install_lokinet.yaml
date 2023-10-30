@@ -15,6 +15,11 @@
       repo: deb https://deb.oxen.io jammy main
       state: present
       filename: lokinet-latest.list
+  - name: Install lokinet packages 
+    ansible.builtin.apt:
+      pkg:
+        "{{ packages_lokinet }}"
+      update_cache: yes
   - name: Disable lokinet-testnet
     ansible.builtin.service:
       name: lokinet-testnet 
@@ -23,8 +28,3 @@
     ansible.builtin.service:
       name: lokinet 
       enabled: no
-  - name: Install lokinet packages 
-    ansible.builtin.apt:
-      pkg:
-        "{{ packages_lokinet }}"
-      update_cache: yes
