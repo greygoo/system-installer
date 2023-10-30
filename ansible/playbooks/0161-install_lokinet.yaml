@@ -15,6 +15,14 @@
       repo: deb https://deb.oxen.io jammy main
       state: present
       filename: lokinet-latest.list
+- name: Disable lokinet-testnet
+    ansible.builtin.service:
+      name: lokinet-testnet 
+      enabled: no
+- name: Disable lokinet as it hogs port 53 
+    ansible.builtin.service:
+      name: lokinet 
+      enabled: no
   - name: Install lokinet packages 
     ansible.builtin.apt:
       pkg:
