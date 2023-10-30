@@ -67,6 +67,7 @@ packages_osmocom:
 packages_lokinet:
   - lokinet-gui
   - libuv1
+  - dnsmasq
 packages_signalserver_gui:
   - python3-pip-whl
   - python3-setuptools-whl
