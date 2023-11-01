@@ -1,4 +1,5 @@
 - name: Add osmocom repo 
+  tags: repo, osmocom, image, install
   hosts: localhost
   tasks:
   - name: Ping my hosts

@@ -1,4 +1,5 @@
 - name: Add Kali repo 
+  tags: repo, kali, image, local
   hosts: localhost
   tasks:
   - name: Ping my hosts

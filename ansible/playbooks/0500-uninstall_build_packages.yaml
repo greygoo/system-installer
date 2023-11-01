@@ -1,4 +1,5 @@
 - name: Uninstalling Build Requirment Packages
+  tags: cleanup, packages
   hosts: localhost
   tasks:
   - name: Ping my hosts

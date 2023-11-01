@@ -1,4 +1,5 @@
-- name: Add Armbian repo 
+- name: Add Armbian repo and install armbian-config 
+  tags: repo, package, armbian, image, install 
   hosts: localhost
   tasks:
   - name: Ping my hosts
