@@ -44,7 +44,7 @@ RunAnsiblePlaybooks()
         	ansible-playbook --extra-vars "branding=${BRANDING}" \
 				 --extra-vars "board=${BOARD}" \
 				 --extra-vars "@config.yaml" \
-				 --extra-vars "@packages_main.conf" \
+				 --extra-vars "@packages_system.conf" \
 				 --extra-vars "@packages_dependencies.conf" \
 				 --extra-vars "@packages_build.conf" \
 			 	 ansible/playbooks/${playbook}
