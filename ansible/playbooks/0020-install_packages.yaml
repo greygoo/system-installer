@@ -6,15 +6,6 @@
   - name: Print message
     ansible.builtin.debug:
       msg: Installing Packages
-  - name: Add Armbian apt-key
-    apt_key:
-      url: http://apt.armbian.com/armbian.key 
-      state: present
-  - name: Add Armbian repo 
-    ansible.builtin.apt_repository:
-      repo: deb http://apt.armbian.com jammy main jammy-utils jammy-desktop
-      state: present
-      filename: armbian
   - name: Install Console Packages
     ansible.builtin.apt:
       pkg:

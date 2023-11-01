@@ -15,3 +15,12 @@
       repo: deb https://http.kali.org/kali kali-rolling main non-free contrib 
       state: present
       filename: /etc/apt/sources.list.d/kali.list 
+  - name: Lower prio of kali repo
+    ansible.builtin.copy:
+      src: ../config/system/orangepi3-lts/default/kali/kali.pref
+      dest: /etc/apt/preferences.d/kali.pref 
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+

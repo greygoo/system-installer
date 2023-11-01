@@ -18,5 +18,7 @@ PLAYBOOKS="0000-create_default_user.yaml \
 	   0162-install_js8call.yaml \
 	   0163-install_qflipper.yaml \
 	   0164-install_signalserver.yaml \
+	   0500-uninstall_build_packages.yaml \
 	   0600-add_kali_repo.yaml \
-	   0601-add_osmocom_repo.yaml"
+	   0601-add_osmocom_repo.yaml \
+	   0602-add_armbian_repo.yaml"

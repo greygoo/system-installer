@@ -212,6 +212,8 @@ packages_build:
   - qt5-qmake
   - qt5-qmake-bin
   - qtbase5-dev-tools
+packages_armbian:
+  - armbian-config
 packages_console:
   - iw
   - tcpdump
