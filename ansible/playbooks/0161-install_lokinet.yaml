@@ -20,10 +20,6 @@
       pkg:
         "{{ packages_lokinet }}"
       update_cache: yes
-  - name: Disable lokinet-testnet
-    ansible.builtin.service:
-      name: lokinet-testnet 
-      enabled: no
   - name: Disable lokinet as it hogs port 53 
     ansible.builtin.service:
       name: lokinet 
