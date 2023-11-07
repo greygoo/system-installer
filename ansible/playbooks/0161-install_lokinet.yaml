@@ -20,13 +20,16 @@
       pkg:
         "{{ packages_lokinet }}"
       update_cache: yes
+  - name: reload systemd daemons
+    ansible.builtin.systemd:
+      daemon_reload: yes
   - name: Disable lokinet as it hogs port 53 
-    ansible.builtin.service:
-      name: lokinet 
-      daemon_reload: true  
+    ansible.builtin.systemd:
+      name: lokinet
+      state: stoppe 
       enabled: false 
   - name: Disable lokinet-test as it requires lokinet 
-    ansible.builtin.service:
+    ansible.builtin.systemd:
       name: lokinet-testnet 
-      daemon_reload: true  
+      state: stopped
       enabled: false 
