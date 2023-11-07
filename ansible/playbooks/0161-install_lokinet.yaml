@@ -23,4 +23,10 @@
   - name: Disable lokinet as it hogs port 53 
     ansible.builtin.service:
       name: lokinet 
-      enabled: no
+      daemon_reload: true  
+      enabled: false 
+  - name: Disable lokinet-test as it requires lokinet 
+    ansible.builtin.service:
+      name: lokinet-testnet 
+      daemon_reload: true  
+      enabled: false 
