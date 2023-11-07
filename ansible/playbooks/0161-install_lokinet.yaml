@@ -26,7 +26,7 @@
   - name: Disable lokinet as it hogs port 53 
     ansible.builtin.systemd:
       name: lokinet
-      state: stoppe 
+      state: stopped
       enabled: false 
   - name: Disable lokinet-test as it requires lokinet 
     ansible.builtin.systemd:
