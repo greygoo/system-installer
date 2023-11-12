@@ -55,6 +55,36 @@
       group: root
       mode: '0755'
       backup: yes
+  - name: Create /usr/local/share/applications directory if it does not exist
+    ansible.builtin.file:
+      path: /usr/local/share/applications
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+  - name: Copy QtSoundmodem.desktop to /usr/local/share/applications 
+    ansible.builtin.copy:
+      src: ../config/system/orangepi3-lts/default/desktop/QtSoundModem.desktop
+      dest: /usr/local/share/applications
+      owner: root
+      group: root
+      mode: '0755'
+      backup: yes
+  - name: Create /usr/local/share/icons directory if it does not exist
+    ansible.builtin.file:
+      path: /usr/local/share/icons
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+  - name: Copy radio.png to /usr/local/share/icons
+    ansible.builtin.copy:
+      src: ../config/system/orangepi3-lts/default/desktop/radio.png
+      dest: /usr/local/share/icons
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
   - name: Uninstall QtSoundModem Build Requirement Packages
     ansible.builtin.apt:
       pkg:
