@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NomadNet
+Comment=NomadNet CLI Application
+Exec=screen -x
+Icon=reticulum
+Path=/home/nomad
+Terminal=true
+StartupNotify=true
+Categories=Chat;Network

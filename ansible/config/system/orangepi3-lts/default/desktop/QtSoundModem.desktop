@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=QtSoundModem
+Comment=SoundModem GUI
+Exec=/usr/local/bin/QtSoundModem
+Icon=radio
+Terminal=false
+StartupNotify=true
+Categories=Network;Tools
