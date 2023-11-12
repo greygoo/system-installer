@@ -13,29 +13,29 @@
   - name: Install RNS and tools 
     ansible.builtin.command: /usr/bin/pip3 install rns lxmf nomadnet requests sbapp
     become: yes
-    become_user: {{ default_user }} 
+    become_user: "{{ default_user }}"
     args:
       chdir: /home/{{ default_user }}
   - name: Create "{{ '/home' + default_user + '/.local/share/applications'}}" directory if it does not exist
     ansible.builtin.file:
       path: /home/{{ default_user }}/.local/share/applications
       state: directory
-      owner: {{ default_user }} 
+      owner: "{{ default_user }}"
       group: users
       mode: '0755'
-  - name: Copy NomadNet.desktop to "{{ '/home' + default_user + '/.local/share/applications'}}" 
+  - name: Copy NomadNet.desktop to "{{ '/home' + default_user + '/.local/share/applications'}}"
     ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/desktop/NomadNet.desktop
-      dest: /usr/local/share/applications
-      owner: {{ default_user }} 
+      dest: /home/{{ default_user }}/.local/share/applications
+      owner: "{{ default_user }}"
       group: users
       mode: '0755'
       backup: yes
-  - name: Copy Sideband.desktop to "{{ '/home' + default_user + '/.local/share/applications'}}" 
+  - name: Copy Sideband.desktop to "{{ '/home' + default_user + '/.local/share/applications'}}"
     ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/desktop/Sideband.desktop
-      dest: /usr/local/share/applications
-      owner: {{ default_user }} 
+      dest: /home/{{ default_user }}/.local/share/applications
+      owner: "{{ default_user }}"
       group: users
       mode: '0755'
       backup: yes
@@ -43,22 +43,22 @@
     ansible.builtin.file:
       path: /home/{{ default_user }}/.local/share/icons
       state: directory
-      owner: {{ default_user }}
+      owner: "{{ default_user }}"
       group: users
       mode: '0755'
-  - name: Copy sideband.png to "{{ '/home' + default_user + '/.local/share/icons'}}" 
+  - name: Copy sideband.png to "{{ '/home' + default_user + '/.local/share/icons'}}"
     ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/desktop/sideband.png
-      dest: /usr/local/share/icons
-      owner: {{ default_user }} 
+      dest: /home/{{ default_user }}/.local/share/icons
+      owner: "{{ default_user }}"
       group: users
       mode: '0755'
       backup: yes
-  - name: Copy reticulum.png to "{{ '/home' + default_user + '/.local/share/icons'}}" 
+  - name: Copy reticulum.png to "{{ '/home' + default_user + '/.local/share/icons'}}"
     ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/desktop/reticulum.png
-      dest: /usr/local/share/icons
-      owner: {{ default_user }} 
+      dest: /home/{{ default_user }}/.local/share/icons
+      owner: "{{ default_user }}"
       group: users
       mode: '0755'
       backup: yes
