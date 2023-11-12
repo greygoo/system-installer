@@ -84,3 +84,11 @@
       group: users
       mode: '0644'
       backup: yes
+  - name: Copy lightdm greeter config lightdm-gtk-greeter.conf 
+    ansible.builtin.copy:
+      src: ../config/system/orangepi3-lts/default/lightdm/lightdm-gtk-greeter.conf 
+      dest: /etc/lightdm/lightdm-gtk-greeter.conf
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
