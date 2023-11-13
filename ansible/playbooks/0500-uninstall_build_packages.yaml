@@ -12,6 +12,10 @@
       name:
         "{{ packages_build }}"
       state: absent
+  - name: Remove build directory
+    ansible.builtin.file:
+      path: /opt/build
+      state: absent
   - name: Remove useless packages from the cache
     ansible.builtin.apt:
       autoclean: yes
