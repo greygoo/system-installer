@@ -65,7 +65,7 @@
   - name: Copy QtSoundmodem.desktop to /usr/local/share/applications 
     ansible.builtin.copy:
       src: ../config/system/orangepi3-lts/default/desktop/QtSoundModem.desktop
-      dest: /usr/local/share/applications
+      dest: /usr/local/share/applications/QtSoundModem.desktop
       owner: root
       group: root
       mode: '0755'
@@ -80,7 +80,7 @@
   - name: Copy radio.png to /usr/local/share/icons
     ansible.builtin.copy:
       src: ../config/system/orangepi3-lts/default/desktop/radio.png
-      dest: /usr/local/share/icons
+      dest: /usr/local/share/icons/radio.png
       owner: root
       group: root
       mode: '0644'

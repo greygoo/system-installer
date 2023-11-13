@@ -26,7 +26,7 @@
   - name: Copy NomadNet.desktop to "{{ '/home' + default_user + '/.local/share/applications'}}"
     ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/desktop/NomadNet.desktop
-      dest: /home/{{ default_user }}/.local/share/applications
+      dest: /home/{{ default_user }}/.local/share/applications/
       owner: "{{ default_user }}"
       group: users
       mode: '0755'
@@ -34,7 +34,7 @@
   - name: Copy Sideband.desktop to "{{ '/home' + default_user + '/.local/share/applications'}}"
     ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/desktop/Sideband.desktop
-      dest: /home/{{ default_user }}/.local/share/applications
+      dest: /home/{{ default_user }}/.local/share/applications/Sideband.desktop
       owner: "{{ default_user }}"
       group: users
       mode: '0755'
@@ -49,7 +49,7 @@
   - name: Copy sideband.png to "{{ '/home' + default_user + '/.local/share/icons'}}"
     ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/desktop/sideband.png
-      dest: /home/{{ default_user }}/.local/share/icons
+      dest: /home/{{ default_user }}/.local/share/icons/sideband.png
       owner: "{{ default_user }}"
       group: users
       mode: '0755'
@@ -57,7 +57,7 @@
   - name: Copy reticulum.png to "{{ '/home' + default_user + '/.local/share/icons'}}"
     ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/desktop/reticulum.png
-      dest: /home/{{ default_user }}/.local/share/icons
+      dest: /home/{{ default_user }}/.local/share/icons/reticulum.png
       owner: "{{ default_user }}"
       group: users
       mode: '0755'

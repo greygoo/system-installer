@@ -23,9 +23,16 @@
       mode: '0755'
   - name: Copy vnc speedup script to "{{ '/home/' + default_user + '/.config/autostart'}}"
     ansible.builtin.copy:
+      src: ../config/user/orangepi3-lts/default/vnc/x11vnc-speedup.sh 
+      dest: "{{ '/home/' + default_user + '/.config/autostart/x11vnc-speedup.sh'}}"
+      owner: "{{ default_user }}" 
+      group: users
+      mode: '0755'
+      backup: yes
+  - name: Enable vnc speedup script
+    ansible.builtin.copy:
       src: ../config/user/orangepi3-lts/default/vnc/x11vnc-speedup.desktop 
       dest: "{{ '/home/' + default_user + '/.config/autostart/x11vnc-speedup.desktop'}}"
       owner: "{{ default_user }}" 
       group: users
       mode: '0755'
-      backup: yes
